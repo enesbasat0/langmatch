@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:langmatch/friends.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +24,7 @@ final GoRouter _router = GoRouter(
     ),
     GoRoute(
       path: '/friends',
-      builder: (context, state) => Placeholder(),
+      builder: (context, state) => Friends(),
     ),
   ],
 );
