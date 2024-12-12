@@ -95,7 +95,12 @@ class Friends extends StatelessWidget {
         color: Colors.orange[300],
         child: ListView(
           children: [
+            buildUserContainer("Keyvan Arasteh", "Yazılım Uzmanı", "https://avatars.githubusercontent.com/u/16303698?v=4"),
             buildUserContainer("Cenk Aydın", "Profesyonel Voleybol Oyuncusu", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEa8HrYurtIa9uEgcSLNJsA6BiCF0h7WwFrA&s"),
+            buildUserContainer("Enes Başat", "E Ticaret Uzmanı", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmjWgOVc0jDICcE6xG1kU5tK8eri0K3y9Fkw&s"),
+            buildUserContainer("Oğuz Çavuş", "Toner Satış Uzmanı", "https://media-ams2-1.cdn.whatsapp.net/v/t61.24694-24/454053502_877112450991019_5922453246373383210_n.jpg?stp=dst-jpg_tt6&ccb=11-4&oh=01_Q5AaIC54XIpnI0O5_W11EMkiLEo__3k-UPiOoYaxUtbfThaK&oe=676873F9&_nc_sid=5e03e0&_nc_cat=108"),
+            buildUserContainer("Ayça 22", "Tanınmış Kişi", "https://icdn.ensonhaber.com/crop/1200x0/resimler/diger/kok/2023/03/17/ayca-22-kamera-acti-ile-tanindi-internetin-gizemli-aycasi-sonun_44bc5421.jpg"),
+
           ],
         ),
       ),
