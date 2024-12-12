@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,9 +8,30 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      routerConfig: _router,
+    );
+  }
+}
+
+final GoRouter _router = GoRouter(
+  routes: [
+    GoRoute(
+      path: '/',
+      builder: (context, state) => LoginScreen(),
+    ),
+    GoRoute(
+      path: '/friends',
+      builder: (context, state) => Placeholder(),
+    ),
+  ],
+);
+
+class LoginScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -73,6 +95,7 @@ class MyApp extends StatelessWidget {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
+                    context.go('/friends');
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(vertical: 16),
@@ -103,6 +126,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-    ),);
+    );
   }
 }
