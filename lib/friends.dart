@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Friends extends StatelessWidget {
   const Friends({super.key});
@@ -102,6 +103,21 @@ class Friends extends StatelessWidget {
             buildUserContainer("Ayça 22", "Tanınmış Kişi", "https://icdn.ensonhaber.com/crop/1200x0/resimler/diger/kok/2023/03/17/ayca-22-kamera-acti-ile-tanindi-internetin-gizemli-aycasi-sonun_44bc5421.jpg"),
 
           ],
+        ),
+      ),
+      bottomNavigationBar: ElevatedButton(
+        onPressed: () {
+          context.go('/profile');
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.orange,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ),
+        child: Text(
+          'Profil',
+          style: TextStyle(color: Colors.white),
         ),
       ),
     );
