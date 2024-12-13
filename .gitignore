@@ -45,3 +45,4 @@ _ReSharper*/
 packages/
 /build
 /.idea
+/.dart_tool
