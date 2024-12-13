@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -6,7 +7,9 @@ class Profile extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.orange[300],
       appBar: AppBar(
-        title: Text('Profile'),
+        title: IconButton( onPressed: () {
+          context.go('/friends');
+        }, icon: Icon(Icons.arrow_back)),
         backgroundColor: Colors.orange,
       ),
       body: Padding(

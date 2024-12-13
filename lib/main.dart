@@ -59,14 +59,14 @@ class LoginScreen extends StatelessWidget {
                     Icon(
                       Icons.favorite,
                       color: Colors.white,
-                      size: 60,
+                      size: 50,
                     ),
                     SizedBox(width: 10),
                     Text(
                       'Lang Match',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 60,
+                        fontSize: 50,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
