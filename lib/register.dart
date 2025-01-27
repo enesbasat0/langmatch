@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:langmatch/friends.dart';
+import 'package:langmatch/main.dart';
 import 'package:langmatch/profile.dart';
-import 'package:langmatch/register.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +22,7 @@ final GoRouter _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => LoginScreen(),
+      builder: (context, state) => Register(),
     ),
     GoRoute(
       path: '/friends',
@@ -33,19 +33,19 @@ final GoRouter _router = GoRouter(
       builder: (context, state) => Profile(),
     ),
     GoRoute(
-      path: '/register',
-      builder: (context, state) => Register(),
+      path: '/',
+      builder: (context, state) => LoginScreen(),
     ),
   ],
 );
 
-class LoginScreen extends StatefulWidget {
+class Register extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  bool _isPasswordVisible = false; // Variable to toggle visibility of password
+class _RegisterState extends State<Register> {
+  bool _isPasswordVisible = false; // State variable to toggle visibility
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
-                    hintText: 'Email',
+                    hintText: 'Kullanıcı adı gir',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -99,11 +99,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 16),
                 TextField(
-                  obscureText: !_isPasswordVisible, // Toggle password visibility
+                  obscureText: !_isPasswordVisible, // Toggle visibility here
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
-                    hintText: 'Password',
+                    hintText: 'Şifre Gir',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   child: Text(
-                    'Giriş Yap ',
+                    'Kayıt Ol',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -144,19 +144,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 865, vertical: 5),
+                SizedBox(height: 20),
+                TextButton(
+                  onPressed: () {},
                   child: Text(
-                    "Hesabın yok mu Kayıt ol",
+                    'Zaten hesabın mevcut mu?',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
-                    context.go('/register');
+                    context.go('/');
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(vertical: 16),
@@ -166,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   child: Text(
-                    'Kayıt Ol',
+                    'Giriş Yap ',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
