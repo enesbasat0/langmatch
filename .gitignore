@@ -46,3 +46,6 @@ packages/
 /build
 /.idea
 /.dart_tool
+
+# Environment variables
+.env

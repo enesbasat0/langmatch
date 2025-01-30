@@ -1,8 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class Friends extends StatelessWidget {
-  const Friends({super.key});
+class Friends extends StatefulWidget {
+  @override
+  _FriendsState createState() => _FriendsState();
+}
+
+class _FriendsState extends State<Friends> {
+  int _selectedIndex = 0; // Ana sayfa sekmesi seçili olacak
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    
+    switch (index) {
+      case 0:
+        context.go('/friends'); // Ana sayfa
+        break;
+      case 1:
+        context.go('/camera'); // Kamera sayfası
+        break;
+      case 2:
+        context.go('/messages');
+        break;
+      case 3:
+        context.go('/profile'); // Profil sayfası
+        break;
+    }
+  }
 
   Widget buildUserContainer(String userName, String description, String url) {
     return Container(
@@ -102,25 +128,41 @@ class Friends extends StatelessWidget {
             buildUserContainer("Oğuz Çavuş", "Toner Satış Uzmanı", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqITnd_uqqay5MSy_7vsMYG5MqtzhHp6Mgbw&s"),
             buildUserContainer("Ayça 22", "Tanınmış Kişi", "https://icdn.ensonhaber.com/crop/1200x0/resimler/diger/kok/2023/03/17/ayca-22-kamera-acti-ile-tanindi-internetin-gizemli-aycasi-sonun_44bc5421.jpg"),
             buildUserContainer("Efe Çakmakcı","Secret Service","https://st5.depositphotos.com/16122460/66903/i/450/depositphotos_669035314-stock-photo-anonymous-man-hood-using-laptop.jpg"),
-            buildUserContainer("Arda Akşit","Üfürükçü Hoca","https://st.depositphotos.com/3332767/4585/i/450/depositphotos_45859937-stock-photo-mature-priest-holding-bible.jpg"),
-            buildUserContainer("Yasin Karagöt", "İronman","https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2dd5e5125369651.6117b731d0915.jpg"),
+            buildUserContainer("Hüseyin Arda Akşit","Üfürükçü Hoca","https://st.depositphotos.com/3332767/4585/i/450/depositphotos_45859937-stock-photo-mature-priest-holding-bible.jpg"),
+            buildUserContainer("Yasin Karagöz", "Full-Stack Developer","https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2dd5e5125369651.6117b731d0915.jpg"),
           ],
         ),
       ),
-      bottomNavigationBar: ElevatedButton(
-        onPressed: () {
-          context.go('/profile');
-        },
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.orange,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(0),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Ana Sayfa',
+            backgroundColor: Colors.orange,
           ),
-        ),
-        child: Text(
-          'Profil',
-          style: TextStyle(color: Colors.white),
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.camera_alt),
+            label: 'Kamera',
+            backgroundColor: Colors.orange,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: 'Mesajlar',
+            backgroundColor: Colors.orange,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profilim',
+            backgroundColor: Colors.orange,
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.deepOrange,
+        unselectedItemColor: Colors.grey,
+        backgroundColor: Colors.orange[300],
+        onTap: _onItemTapped,
+        type: BottomNavigationBarType.fixed,
+        elevation: 0,
       ),
     );
   }
