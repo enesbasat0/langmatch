@@ -74,15 +74,20 @@ lib/
 |---widgets
 ```
 ## Demo Video
-<!-- video için githubtan video yu tut sürükle yap demo video kısmına 
 
--->
+
+
+https://github.com/user-attachments/assets/0aa98793-3320-4f08-960f-d3e55026a8d6
+
 
 ## Ekran Görüntüleri
-<!-- örnek ekran görüntüsü
-<img src="https://github.com/Ysnkrgzz/SportCity/blob/f0ed8384a4738627c144946234cc6c2cd16fd68f/EkranGoruntuleri/1-Loading.png" width="200" height="400" />
--->
 
+![1](https://github.com/user-attachments/assets/b15b590e-780d-43eb-b8ad-f7bb311b9866)
+![2](https://github.com/user-attachments/assets/64b7b3e0-b047-4c98-aa59-7bf945e52d8a)
+![3](https://github.com/user-attachments/assets/94a31a22-ccbd-47ca-9a1f-84d79474b8ce)
+![4](https://github.com/user-attachments/assets/18fc288e-834d-490f-bf58-57c1721843af)
+![5](https://github.com/user-attachments/assets/4ddcad53-48f0-4941-ae29-04213245f08a)
+![6](https://github.com/user-attachments/assets/841a57ba-eab6-4d6e-93a7-f2d8a14013ad)
 
 
 
