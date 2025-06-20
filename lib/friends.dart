@@ -130,6 +130,19 @@ class _FriendsState extends State<Friends> {
             buildUserContainer("Efe Çakmakcı","Secret Service","https://st5.depositphotos.com/16122460/66903/i/450/depositphotos_669035314-stock-photo-anonymous-man-hood-using-laptop.jpg"),
             buildUserContainer("Hüseyin Arda Akşit","Üfürükçü Hoca","https://st.depositphotos.com/3332767/4585/i/450/depositphotos_45859937-stock-photo-mature-priest-holding-bible.jpg"),
             buildUserContainer("Yasin Karagöz", "Full-Stack Developer","https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2dd5e5125369651.6117b731d0915.jpg"),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/about');
+              },
+              child: Text('Proje Hakkında'),
+            ),
+            SizedBox(height: 8),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/contact');
+              },
+              child: Text('İletişim'),
+            ),
           ],
         ),
       ),

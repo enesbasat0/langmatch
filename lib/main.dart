@@ -9,6 +9,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:langmatch/about.dart';
+import 'package:langmatch/contact.dart';
 
 Future<void> initializeFirebase() async {
   await Firebase.initializeApp(
@@ -97,6 +99,14 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/camera',
       builder: (context, state) => Camera(),
+    ),
+    GoRoute(
+      path: '/about',
+      builder: (context, state) => AboutPage(),
+    ),
+    GoRoute(
+      path: '/contact',
+      builder: (context, state) => ContactPage(),
     ),
   ],
 );
